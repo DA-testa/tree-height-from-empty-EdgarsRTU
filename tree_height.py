@@ -41,7 +41,7 @@ def main():
             height = compute_height(r, parents)
             print(height)
     else:
-        print("Mistake")
+        print("Error")
         exit()
 
 
