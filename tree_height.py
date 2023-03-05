@@ -2,10 +2,10 @@ import sys
 import threading
 
 
-def compute_height(s, parents):
+def compute_height(r, parents):
     # izveido koku
-    children = [[] for _ in range(s)]
-    for i in range(s):
+    children = [[] for _ in range(r)]
+    for i in range(r):
         parent = parents[i]
         if parent == -1:
             root = i
@@ -29,19 +29,19 @@ def main():
     input_type = input()
 
     if 'I' in input_type:
-        s = int(input())
+        r = int(input())
         parents = list(map(int, input().split()))
-        height = compute_height(s, parents)
+        height = compute_height(r, parents)
         print(height)
     elif 'F' in input_type:
         filename = input()
-        with open("test/" + filename, 's') as f:
-            s = int(f.readline())
+        with open("test/" + filename, 'r') as f:
+            r = int(f.readline())
             parents = list(map(int, f.readline().split()))
-            height = compute_height(s, parents)
+            height = compute_height(r, parents)
             print(height)
     else:
-        print("Error")
+        print("Mistake")
         exit()
 
 
